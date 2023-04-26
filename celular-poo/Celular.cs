@@ -11,26 +11,27 @@ namespace celular_poo
         public string Cor;
         public string Modelo;
         public string Tamanho;
+        public bool Ligado;
+        public string Resposta;
 
         // Com os métodos, ligar, desligar, fazer ligação, enviar mensagem.
 
         public void Ligar()
         {
-            string resposta;
+
             do
             {
                 Console.WriteLine($"Vai ligar o celular? (s/n)");
-                resposta = Console.ReadLine().ToLower();
+                Resposta = Console.ReadLine().ToLower();
 
-                if (resposta == "s") { Console.WriteLine($"Ligando aparelho"); }
-                else if (resposta == "n") { Console.WriteLine($"Celular desligado"); }
+                Ligado = Resposta == "s" ? true : false;
 
-            } while (resposta == "n");
+            } while (Resposta == "n");
         }
 
         public void Desligar()
         {
-            Console.WriteLine($"Desligando o tijolo...");           
+            Console.WriteLine($"Desligando o tijolo...");
         }
 
         public void FazerLigacao()
